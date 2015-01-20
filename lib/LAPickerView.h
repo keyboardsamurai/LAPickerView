@@ -50,8 +50,8 @@
     // Selection
     LAPickerTableView * _selectingTable; // table being changed
     
-    id<LAPickerViewDataSource> _dataSource;
-    id<LAPickerViewDelegate> _delegate;
+    id<LAPickerViewDataSource> __weak _dataSource;
+    id<LAPickerViewDelegate> __weak _delegate;
     
 //    UIView *_topFrame;
 //    NSMutableArray *_dividers;
@@ -92,14 +92,14 @@
  @discussion
  The data source must adopt the LAPickerViewDataSource protocol and implement the required methods to return the number of components and the number of columns in each component.
  */
-@property (nonatomic, assign) id<LAPickerViewDataSource> dataSource;
+@property (nonatomic, weak) id<LAPickerViewDataSource> dataSource;
 
 /*!
  The delegate for the picker view.
  @discussion
  The delegate must adopt the LAPickerViewDelegate protocol and implement the required methods to return the drawing rectangle for column in each component. It also provides the content for each component’s column, either as a string or a view, and it typically responds to new selections or deselections.
  */
-@property (nonatomic, assign) id<LAPickerViewDelegate> delegate;
+@property (nonatomic, weak) id<LAPickerViewDelegate> delegate;
 
 /*!
  The alignment of the picker view selection indicator.

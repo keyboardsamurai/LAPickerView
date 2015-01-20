@@ -134,7 +134,6 @@
             tableView.selectionAlignment = _selectionAlignment;
             [_tables addObject:tableView];
             [self addSubview:tableView];
-            [tableView release];
         }
     }
 }

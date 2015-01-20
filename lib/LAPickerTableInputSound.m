@@ -37,7 +37,7 @@ static LAPickerTableInputSound * _defaultInputSound;
     if(self)
     {
         NSURL * soundPath = [NSURL fileURLWithPath:@"/System/Library/Audio/UISounds/Tock.caf"]; // TODO add sound to LAPickerView.bundle
-        AudioServicesCreateSystemSoundID((CFURLRef)soundPath, &_inputSoundId);
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundPath, &_inputSoundId);
     }
     return self;
 }

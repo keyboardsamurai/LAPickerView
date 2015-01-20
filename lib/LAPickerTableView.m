@@ -237,7 +237,7 @@
             
             for(int column=0; column<_numberOfColumns; ++column)
             {
-                UIView * view = [[_delegate pickerTableView:self viewForColumn:column forComponent:_component reusingView:nil] retain];
+                UIView * view = [_delegate pickerTableView:self viewForColumn:column forComponent:_component reusingView:nil];
                 NSString * title = [_delegate pickerTableView:self titleForColumn:column forComponent:_component];
                 
                 if(view == nil)
@@ -275,12 +275,10 @@
                 
                 [_columns addObject:view];
                 [_scrollView addSubview:view];
-                [view release];
                 
                 _contentSize += _columnSize.width;
             }
             
-            [columnViews release];
             
             // content size
             _scrollView.contentSize = CGSizeMake(_contentSize+_contentSizePadding, _columnSize.height);

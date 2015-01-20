@@ -73,8 +73,8 @@ typedef enum {
     CGFloat _contentOffset;
     CGSize _columnSize; // max-width found
     
-    id<LAPickerTableViewDataSource> _dataSource;
-    id<LAPickerTableViewDelegate> _delegate;
+    id<LAPickerTableViewDataSource> __weak _dataSource;
+    id<LAPickerTableViewDelegate> __weak _delegate;
 }
 
 @property (nonatomic, readonly) NSInteger selectedColumn;
@@ -84,8 +84,8 @@ typedef enum {
  */
 @property (nonatomic) LAPickerSelectionAlignment selectionAlignment;
 
-@property (nonatomic, assign) id<LAPickerTableViewDataSource> dataSource;
-@property (nonatomic, assign) id<LAPickerTableViewDelegate> delegate;
+@property (nonatomic, weak) id<LAPickerTableViewDataSource> dataSource;
+@property (nonatomic, weak) id<LAPickerTableViewDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame andComponent:(NSInteger)component;
 
