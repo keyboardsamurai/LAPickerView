@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A01C024F1620DA06003DA76F"
-               BuildableName = "Framework"
+               BuildableName = "Framework Debug"
                BlueprintName = "Framework"
                ReferencedContainer = "container:LAPickerView.xcodeproj">
             </BuildableReference>

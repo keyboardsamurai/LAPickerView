@@ -130,6 +130,7 @@
         if(column > -1 && column < _numberOfColumns)
         {
             _contentOffset = column*_columnSize.width;
+            _selectedColumn = column;
             
             [_scrollView setContentOffset:CGPointMake(-_selectionEdgeInset+_contentOffset, 0) animated:animated];
         }
